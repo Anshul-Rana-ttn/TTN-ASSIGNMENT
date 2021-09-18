@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Question 17</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+div {
+	background-size: auto;
+	background-position: center;
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+}
+
+</style>
+<script lang="javascript">
+
+var array = new Array("slide1.jpg","slide2.jpg","slide3.jpg","slide4.jpg");
+
+$(document).ready(function(){
+
+var i = 0;
+$("#demo").css("background-image", "url(" + array[i] + ")");
+setInterval(function () {
+	i++;
+        if (i == array.length) {
+	        i = 0;
+        }
+        $("#demo").fadeOut("slow", function () {
+            $(this).css("background-image", "url(" + array[i] + ")");
+            $(this).fadeIn("slow");
+        });
+}, 500);
+});
+
+
+</script>
+</head>
+<body>
+<br />
+<div id="demo"></div>
+</body>
+</html>
